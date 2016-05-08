@@ -184,8 +184,8 @@ LexemeList *scanBuffer(const char *buffer, unsigned int size, const char *fname)
 			continue;
 		}
 		/* Apostrophe Z ('Z) is its own lexeme */
-		if (!strncmp(start, "'Z", 2)) {
-			Lexeme *lex = createLexeme("'Z", fname, line);
+		if (!strncmp(start, "'का", 7)) {
+			Lexeme *lex = createLexeme("'का", fname, line);
 			if (!lex) {
 				deleteLexemeList(list);
 				return NULL;
@@ -195,7 +195,7 @@ LexemeList *scanBuffer(const char *buffer, unsigned int size, const char *fname)
 				deleteLexemeList(list);
 				return NULL;
 			}
-			start += 2;
+			start += 7;
 			continue;
 		}
 		/* Skip over leading whitespace */
@@ -247,9 +247,9 @@ LexemeList *scanBuffer(const char *buffer, unsigned int size, const char *fname)
 		/* Skip over comments */
 		if ((list->num == 0
 				|| *(list->lexemes[list->num - 1]->image) == '\n')
-				&& !strncmp(start, "OBTW", 4)) {
-			start += 4;
-			while (strncmp(start, "TLDR", 4)) {
+				&& !strncmp(start, "बड़ी टिप्पणी", 34)) {
+			start += 34;
+			while (strncmp(start, "खतम टिप्पणी", 31)) {
 				if ((!strncmp(start, "\r\n", 2) && (start += 2))
 						|| (*start == '\r' && start++)
 						|| (*start == '\n' && start++))
@@ -257,7 +257,7 @@ LexemeList *scanBuffer(const char *buffer, unsigned int size, const char *fname)
 				else
 					start++;
 			}
-			start += 4;
+			start += 31;
 			/* Must end in newline */
 			while (*start && isspace(*start) && *start != '\r' && *start != '\n')
 				start++;
@@ -267,7 +267,7 @@ LexemeList *scanBuffer(const char *buffer, unsigned int size, const char *fname)
 			deleteLexemeList(list);
 			return NULL;
 		}
-		if (!strncmp(start, "BTW", 3)) {
+		if (!strncmp(start, "टिप्पणी", 3)) {
 			start += 3;
 			while (*start && *start != '\r' && *start != '\n')
 				start++;
@@ -292,7 +292,7 @@ LexemeList *scanBuffer(const char *buffer, unsigned int size, const char *fname)
 			if (start[len] && !isspace(start[len])
 					&& *(start + len) != ','
 					&& *(start + len) != '!'
-					&& strncmp(start + len, "'Z", 2)
+					&& strncmp(start + len, "'का", 7)
 					&& strncmp(start + len, "...", 3)
 					&& strncmp(start + len, "\xE2\x80\xA6", 3)) {
 				error(LX_EXPECTED_TOKEN_DELIMITER, fname, line);
@@ -305,7 +305,7 @@ LexemeList *scanBuffer(const char *buffer, unsigned int size, const char *fname)
 			while (start[len] && !isspace(start[len])
 					&& *(start + len) != ','
 					&& *(start + len) != '!'
-					&& strncmp(start + len, "'Z", 2)
+					&& strncmp(start + len, "'का", 7)
 					&& strncmp(start + len, "...", 3)
 					&& strncmp(start + len, "\xE2\x80\xA6", 3))
 				len++;

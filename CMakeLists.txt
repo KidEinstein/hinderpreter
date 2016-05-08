@@ -40,11 +40,11 @@ SET(SRCS
   error.c
 )
   
-add_executable(lci ${SRCS} ${HDRS})
-target_link_libraries(lci m)
+add_executable(hi ${SRCS} ${HDRS})
+target_link_libraries(hi m)
 add_subdirectory(test)
 install(
-  TARGETS lci
+  TARGETS hi
   RUNTIME DESTINATION bin
 )
 

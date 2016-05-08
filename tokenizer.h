@@ -93,7 +93,7 @@ typedef enum {
 	TT_IMINYR,      /**< Loop beginning. */
 	TT_UPPIN,       /**< Auto increment loop variable. */
 	TT_NERFIN,      /**< Auto decrement loop variable. */
-	TT_YR,          /**< Function name delimiter. */ 
+	TT_YR,          /**< Function name delimiter. */
 	TT_TIL,         /**< Do until. */
 	TT_WILE,        /**< Do while. */
 	TT_IMOUTTAYR,   /**< Loop ending. */
@@ -116,75 +116,75 @@ static const char *keywords[] = {
 	"",            /* TT_STRING */
 	"",            /* TT_IDENTIFIER */
 	"",            /* TT_BOOLEAN */
-	"IT",          /* TT_IT */
-	"ITZ LIEK A",  /* TT_ITZLIEKA */
-	"NOOB",        /* TT_NOOB */
-	"NUMBR",       /* TT_NUMBR */
-	"NUMBAR",      /* TT_NUMBAR */
-	"TROOF",       /* TT_TROOF */
-	"YARN",        /* TT_YARN */
-	"BUKKIT",      /* TT_BUKKIT */
+	"ताज़ा",          /* TT_IT */
+	"छापों",  /* TT_ITZLIEKA */
+	"खाली",        /* TT_NOOB */
+	"संख्या",       /* TT_NUMBR */
+	"दशमलव",      /* TT_NUMBAR */
+	"हाना",       /* TT_TROOF */
+	"अक्षरमाला",        /* TT_YARN */
+	"माला",      /* TT_BUKKIT */
 	"",            /* TT_EOF */
 	"",            /* TT_NEWLINE */
-	"HAI",         /* TT_HAI */
-	"KTHXBYE",     /* TT_KTHXBYE */
-	"HAS A",       /* TT_HASA */
-	"HAS AN",      /* TT_HASAN */
-	"ITZ A",       /* TT_ITZA */
-	"ITZ",         /* TT_ITZ */
-	"R NOOB",      /* TT_RNOOB */
-	"R",           /* TT_R */
-	"AN YR",       /* TT_ANYR */
-	"AN",          /* TT_AN */
-	"SUM OF",      /* TT_SUMOF */
-	"DIFF OF",     /* TT_DIFFOF */
-	"PRODUKT OF",  /* TT_PRODUKTOF */
-	"QUOSHUNT OF", /* TT_QUOSHUNTOF */
-	"MOD OF",      /* TT_MODOF */
-	"BIGGR OF",    /* TT_BIGGROF */
-	"SMALLR OF",   /* TT_SMALLROF */
-	"BOTH OF",     /* TT_BOTHOF */
-	"EITHER OF",   /* TT_EITHEROF */
-	"WON OF",      /* TT_WONOF */
-	"NOT",         /* TT_NOT */
-	"MKAY",        /* TT_MKAY */
-	"ALL OF",      /* TT_ALLOF */
-	"ANY OF",      /* TT_ANYOF */
-	"BOTH SAEM",   /* TT_BOTHSAEM */
-	"DIFFRINT",    /* TT_DIFFRINT */
-	"MAEK",        /* TT_MAEK */
-	"A",           /* TT_A */
-	"IS NOW A",    /* TT_ISNOWA */
-	"VISIBLE",     /* TT_VISIBLE */
-	"INVISIBLE",   /* TT_INVISIBLE */
-	"SMOOSH",      /* TT_SMOOSH */
+	"नमस्ते",         /* TT_HAI */
+	"अलविदा",     /* TT_KTHXBYE */
+	"चीज़",       /* TT_HASA */
+	"चीज़",      /* TT_HASAN */
+	"है एक",       /* TT_ITZA */
+	"है",         /* TT_ITZ */
+	"है खाली",      /* TT_RNOOB */
+	"अब है",           /* TT_R */
+	"और जानकारी",       /* TT_ANYR */
+	"और",          /* TT_AN */
+	"जोड़",      /* TT_SUMOF */
+	"घाटा",     /* TT_DIFFOF */
+	"गुणा",  /* TT_PRODUKTOF */
+	"भाग", /* TT_QUOSHUNTOF */
+	"बाकी",      /* TT_MODOF */
+	"बड़ा",    /* TT_BIGGROF */
+	"छोटा",   /* TT_SMALLROF */
+	"दोनों",     /* TT_BOTHOF */
+	"कोई एक",   /* TT_EITHEROF */
+	"सिर्फ़ एक",      /* TT_WONOF */
+	"नहीं",         /* TT_NOT */
+	"बस",        /* TT_MKAY */
+	"सब",      /* TT_ALLOF */
+	"कुछ",      /* TT_ANYOF */
+	"बराबर",   /* TT_BOTHSAEM */
+	"अलग",    /* TT_DIFFRINT */
+	"बनाओ",        /* TT_MAEK */
+	"एक",           /* TT_A */
+	"अब बन गया",    /* TT_ISNOWA */
+	"दिखाओ",     /* TT_VISIBLE */
+	"गलती",   /* TT_INVISIBLE */
+	"जोड़ो",      /* TT_SMOOSH */
 	"!",           /* TT_BANG */
-	"GIMMEH",      /* TT_GIMMEH */
-	"O RLY?",      /* TT_ORLY */
-	"YA RLY",      /* TT_YARLY */
-	"MEBBE",       /* TT_MEBBE */
-	"NO WAI",      /* TT_NOWAI */
-	"OIC",         /* TT_OIC */
-	"WTF?",        /* TT_WTF */
-	"OMG",         /* TT_OMG */
-	"OMGWTF",      /* TT_OMGWTF */
-	"GTFO",        /* TT_GTFO */
-	"IM IN YR",    /* TT_IMINYR */
-	"UPPIN",       /* TT_UPPIN */
-	"NERFIN",      /* TT_NERFIN */
-	"YR",          /* TT_YR */
-	"TIL",         /* TT_TIL */
-	"WILE",        /* TT_WILE */
-	"IM OUTTA YR", /* TT_IMOUTTAYR */
-	"HOW IZ",      /* TT_HOWIZ */
-	"IZ",          /* TT_IZ */
-	"IF U SAY SO", /* TT_IFUSAYSO */
-	"FOUND YR",    /* TT_FOUNDYR */
-	"SRS",         /* TT_SRS */
-	"'Z",          /* TT_APOSTROPHEZ */
+	"दो",      /* TT_GIMMEH */
+	"क्या?",      /* TT_ORLY */
+	"हाँ",      /* TT_YARLY */
+	"या फिर",       /* TT_MEBBE */
+	"ना",      /* TT_NOWAI */
+	"अंत",         /* TT_OIC */
+	"पेड़",        /* TT_WTF */
+	"शाखा",         /* TT_OMG */
+	"नही तो",      /* TT_OMGWTF */
+	"तोड़ो",        /* TT_GTFO */
+	"शुरू करो",    /* TT_IMINYR */
+	"बढ़ाओ",       /* TT_UPPIN */
+	"बढ़ाओ",      /* TT_NERFIN */
+	"यह",          /* TT_YR */
+	"जब तक नहीं",         /* TT_TIL */
+	"जब तक",        /* TT_WILE */
+	"खतम करो", /* TT_IMOUTTAYR */
+	"काम",      /* TT_HOWIZ */
+	"बुलाओ",          /* TT_IZ */
+	"कामखतम", /* TT_IFUSAYSO */
+	"वापस",    /* TT_FOUNDYR */
+	"सरस",         /* TT_SRS */
+	"'का",          /* TT_APOSTROPHEZ */
 	"O HAI IM",    /* TT_OHAIIM */
 	"IM LIEK",     /* TT_IMLIEK */
-	"KTHX",        /* TT_KTHX */
+	"खतम",        /* TT_KTHX */
 	""             /* TT_ENDOFTOKENS */
 };
 

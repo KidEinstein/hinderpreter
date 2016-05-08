@@ -73,17 +73,19 @@ int isString(const char *image)
  * \retval 0 \a image does not match the pattern for an identifier.
  *
  * \retval 1 \a image matches the pattern for an identifier.
+ *
+ * \todo Fix function to detect hindi characters
  */
 int isIdentifier(const char *image)
 {
-	const char *cur = image;
-	/* First character must be alphabetic */
-	if (!cur || !isalpha(*cur)) return 0;
-	cur++;
-	while (*cur) {
-		if (isalnum(*cur) || *cur == '_') cur++;
-		else return 0;
-	}
+//	const char *cur = image;
+//	/* First character must be alphabetic */
+//	if (!cur || !isalpha(*cur)) return 0;
+//	cur++;
+//	while (*cur) {
+//		if (isalnum(*cur) || *cur == '_') cur++;
+//		else return 0;
+//	}
 	return 1;
 }
 

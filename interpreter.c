@@ -822,8 +822,8 @@ ScopeObject *getScopeObject(ScopeObject *src,
 	if (!name) goto getScopeObjectAbort;
 
 	/* Check for targets with special meanings */
-	isI = strcmp(name, "I");
-	isME = strcmp(name, "ME");
+	isI = strcmp(name, "यहाँ");
+	isME = strcmp(name, "मेरा");
 	free(name);
 	name = NULL;
 
